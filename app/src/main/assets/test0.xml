@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root readme="华润信托·大朴民享1期2号集合资金信托计划" version="1.0">
+  <!--cache属性取值范围：0不缓存,1当前版本缓存-->
+  <speechcraft speechID="1" name="提前风险提示：" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="0" cache="1"><![CDATA[尊敬我行贵宾客户您好，请您保持在摄像范围内，现在需要进行人脸识别]]></Text>
+  </speechcraft>
+  <speechcraft speechID="2" name="声明" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="0"><![CDATA[尊敬的]]>
+      <CustName type="A" readme="客户姓名" belongto="pfp">CustName</CustName>
+      <Sex type="A" readme="客户性别" belongto="pfp">Sex</Sex><![CDATA[很高兴为您服务，视频录制前有以下几点声明提示您：
+1、本次视频验证操作需要持续10-15分钟左右，请您全程保持在摄像范围内；
+2、在此过程中，您将要购买的产品额度有可能会减少或不足；
+3、本次视频验证仅进行相关条款信息的确认，不做任何产品问题的解答；
+4、针对相关条款信息确认请您使用是或否做答；
+请您如实回答相关问题。请问您是/否同意？]]>
+    </Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="3" name="过程了解" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[您准备购买的产品名称是【华润信托·大朴民享1期2号集合资金信托计划】，产品代码是【T16660】，在此之前，您是/否仔细阅读过这款产品的合同、风险说明书、宣传资料，并已经充分理解资料内容？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+    <Text textID="2" belongto="avp" textAction="1" cache="1"><![CDATA[您与产品管理人之间的权利义务以您签署的书面文件为准，与合同内容不一致的约定或承诺将无法得到有效履行和法律保障。如果在此之前您从民生银行分支行了解过这款产品的信息，那么请问您通过分支行了解的产品信息与您所阅读的产品合同、风险申明书、宣传资料内容是/否一致？]]></Text>
+    <Reply action="continue" textIDLink="2" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="2" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="4" name="管理责任" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1">
+      <![CDATA[本产品由【华润深国投信托有限公司】主动管理、风险控制，【上海大朴资产管理有限公司】担任投资顾问，我行作为代销机构不承担产品的投资、兑付和风险管理责任。民生银行作为代销机构不承担产品的投资、兑付和风险管理责任。请问您是/否了解？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="5" name="风险等级" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[产品类型为混合类（主动管理型），产品风险等级为【五级】，适合风评等级不低于【五级】且具有【权益策略】类产品投资经验或对【权益策略】类产品具有较高认可度的合格投资者购买。请问您是/否符合上述条件？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="6" name="资金用途" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[计划资金主要通过底层【大朴民享1期私募证券投资基金】投资于权益类资产、债权类资产、商品及金融衍生品类资产且任意一类资产的比例合计均不超过计划资产的80%；基金投资于单一创业板、科创板、港股股票市值占比上限与主板股票均为20%，投资创业板、科创板、港股股票市值总值占基金资产净值的比例上限分别为40%、50%、50%。具体投资范围和投资限制详见《华润信托·大朴民享1期2号集合资金信托计划资金信托合同》第12条“信托计划财产的管理运用”及附件标的基金文件。请问您是/否了解？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="7" name="产品期限" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[本产品每月开放申购，开放日为每月最后一个交易日。本产品针对信托单位设有封闭期，12个开放日，期间不接受赎回。本产品针对信托单位设有准封闭期，为封闭期届满后的6个开放日。申购申请须在开放日前的10个交易日（含当日）至开放日（含当日）下午3:00进行提交。赎回申请须在开放日前的5个交易日（含当日）至开放日（含当日）下午3：00之前进行提交。具体申赎规则请见《信托合同》第9-10条。请问您是/否了解？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="8" name="产品费率" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[参与费为【1%】，准封闭期内赎回费率为【2%】。产品合计的费用包括固定信托管理费1为【0.1%/年】；固定信托管理费2为【0.8%/年】；固定投资顾问费为【0.8%/年】;保管费为【0.02%/年】；在赎回、分红、终止时采用单人单笔高水位法，计提【20%】作为业绩报酬，产品费用和业绩报酬请见《华润信托·大朴民享1期2号集合资金信托计划资金信托合同》。产品投资的底层【大朴民享1期私募证券投资基金】A类份额的外包服务费为【0.05%/年】，托管费为【0.05%/年】。请问您是/否了解？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="9" name="收益特征" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[产品不保本、不保收益，收益来源主要为【股票买卖价差和股票分红】，收益类型为浮动收益，收益受持仓标的价格波动影响。请问您是/否清楚？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="10" name="风险特征" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[产品面临风险主要包括【本金损失风险、市场风险、管理风险、流动性风险、信用风险】操作、法律等风险，市场风险主要包括政策风险、经济周期风险、利率风险、上市公司经营风险、购买力风险等。具体风险情况，请您阅读认购风险申明书以及合同附件1特别风险揭示函。
+请问您是/否充分了解该产品的相关信息和全部风险，并愿意承担投资风险？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="11" name="信披及争议解决" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[产品的后续信息您可通过管理人【华润深国投信托有限公司】官方网站进行了解，管理人将按照合同约定进行定期信息披露，并将在严重影响信托计划运营或严重影响受益人权益的事项发生后进行临时信息披露。
+您购买本产品后有任何疑问、建议或投诉，均可向我行（包括但不限于通过我行客户服务中心咨询投诉电话4006195568、销售网点等）或本产品管理人华润深国投信托有限公司（4006788883）沟通和反馈。
+与本产品有关的任何争议，各方应友好协商解决，若不能协商解决，您可根据法律法规、监管政策、合同约定，通过申请调解、提起诉讼或仲裁等方式解决。请问您是/否了解？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="12" name="特别提示" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="1" cache="1"><![CDATA[本产品投资标的私募基金投资于单一创业板、科创板、港股股票市值占比上限与主板股票均为20%，投资创业板、科创板、港股股票市值总值占基金资产净值的比例上限分别为40%、50%、50%。标的基金不设预警、止损线。提示您关注相关产品风险。投资者投资期间存在大幅度浮亏的可能，如果退出价格低于投资成本，将形成实际亏损；产品为高等风险等级产品，只适合风险测评为五级的客户投资。具体风险情况请您仔细阅读合约文件，尤其是有关风险揭示的内容。请问您是否已了解，请回答“是”或“否”？]]></Text>
+    <Reply action="continue" textIDLink="1" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="1" replyID="1" belongto="avp">否</Reply>
+    <Text textID="2" belongto="avp" textAction="1" cache="1"><![CDATA[请问本次产品合同的签署过程是您本人的真实意思表述吗？请回答“是”或“否”？]]></Text>
+    <Reply action="continue" textIDLink="2" belongto="avp">是</Reply>
+    <Reply action="quit" textIDLink="2" replyID="1" belongto="avp">否</Reply>
+  </speechcraft>
+  <speechcraft speechID="13" name="结束话语" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="0" cache="1"><![CDATA[您的双录结果为通过，该视频验证结果保留72个小时。请客户：点击【确认】按钮。]]></Text>
+  </speechcraft>
+  <ReplyAnswer textID="1" textName="答案为否的回复" textAction="0" belongto="avp"><![CDATA[录音录像主要目的是确认您充分了解想要购买的产品，同时对于今后您维护权益非常关键。如果您不接受，建议您前往民生银行营业网点咨询购买。]]></ReplyAnswer>
+</root>

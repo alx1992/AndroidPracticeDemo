@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MyPracticeDemo</string>
+    <string name="parse">解析</string>
+    <string name="button">Button</string>
+    <string name="text">asyncTask</string>
+    <string name="sure">execute</string>
+    <string name="cancel">cancel</string>
+</resources>

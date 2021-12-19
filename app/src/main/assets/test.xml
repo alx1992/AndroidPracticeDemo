@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root readme="虚拟柜员-远程见证转账作业流程" version="1.0">
+  <!--
+	cache属性取值范围：0不缓存,1当前版本缓存
+	textAction :0 不需要等待 ，1 等待客户回答执行动作，2 等待系统应答执行动作
+	operation 操作类型：RingOff 主动挂断
+	-->
+  <speechcraft speechID="1" name="视频任务开始" belongto="avp">
+    <Text textID="1" belongto="avp" textAction="0" cache="0">
+		<![CDATA[尊敬的]]>
+		  <CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+		  <Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+		<![CDATA[您好，现在为您正在办理转账业务。为了您的资金安全：请不要向陌生人转账,谨防冒充中奖、法院通知、绑架等电信诈骗犯罪活动！]]>
+	</Text>
+  </speechcraft>
+  <speechcraft speechID="2" name="转账信息确认" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="2" cache="1">
+			<![CDATA[
+			1、本次业务认证需全程录制视频，请您保持视频通话模式。
+			2、请您核对转账信息，并根据系统提示操作。]]>
+		</Text>
+		<!--等待手机银行结果，action作为判断条件执行动作-->
+		<Reply action="continue" textIDLink="1" belongto="avp">确认</Reply>
+		<Reply action="quit" textIDLink="1" replyID="1" belongto="avp">撤销</Reply>
+  </speechcraft>
+  <speechcraft speechID="3" name="密码验证" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="2" cache="0">
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，为保障您的资金安全，再与您核对几项信息，请查看手机推送内容并进行选择。]]>
+		</Text>
+		<!--anser 验证码，交易码验证成功，手机银行给出应答，下一步-->
+		<Reply action="success" textIDLink="1" belongto="avp">应答成功</Reply>
+		<Reply action="fail" textIDLink="1" replyID="2" belongto="avp" >应答失败</Reply>
+		<Reply action="quit" textIDLink="1" replyID="3" belongto="avp" >二次验证失败</Reply>
+  </speechcraft>
+  <speechcraft speechID="4" name="人脸识别" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="2" cache="1">
+			<![CDATA[下面将进行身份识别，请您将脸部对准图像采集框，保持周围环境光线充足，避免镜头逆光。]]>
+		</Text>
+		<!--anser 人脸校验成功，播报关联话术，进行下一步。验证失败，播报关联话术-->
+		<Reply action="success" textIDLink="1" replyID="4" belongto="avp">应答成功</Reply>
+		<Reply action="fail" textIDLink="1" replyID="5" belongto="avp" >应答失败</Reply>
+		<Reply action="quit" textIDLink="1" replyID="6" belongto="avp" >二次验证失败</Reply>
+  </speechcraft>
+  <speechcraft speechID="5" name="问题核验" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="2" cache="0">
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，为了保障您的资金安全，需与您核对几项信息，请查看手机推送内容。]]>
+		</Text>
+		<Reply action="success" textIDLink="1" belongto="avp">应答成功</Reply>
+		<Reply action="fail" textIDLink="1" replyID="7" belongto="avp" >应答失败</Reply>
+		<Reply action="quit" textIDLink="1" replyID="8" belongto="avp" >二次验证失败</Reply>
+  </speechcraft>
+  <speechcraft speechID="6" name="办理完成" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="0" cache="0"><![CDATA[尊敬的]]>
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，业务已见证成功，请等待转账结果页面弹出，查询转账状态后再退出手机银行并关注资金到账情况。感谢您使用远程银行，祝您生活愉快再见。]]>
+			</Text>
+  </speechcraft>
+  <ReplyAnswer speechID="7" name="应答话术" belongto="avp">
+		<Text textID="1" belongto="avp" textAction="0" cache="0">
+			<![CDATA[尊敬的]]>
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[您好，您申请办理的大额转账远程见证业务将终止处理，请使用其他大额转账认证方式。]]>
+		</Text>
+		<Text textID="2" belongto="avp"  textAction="0" cache="1">
+			<![CDATA[您输入的短信验证码或交易密码有误，请重新输入]]>
+		</Text>
+		<Text textID="3" belongto="avp"  textAction="0" cache="0">
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，由于短信验证码或交易密码未通过，您申请办理的大额转账远程见证业务将终止，请使用其他大额转账认证方式。]]>
+		</Text>
+		<Text textID="4" belongto="avp" textAction="0" cache="1">
+			<![CDATA[图像采集完毕。]]>
+		</Text>
+		<Text textID="5" belongto="avp" textAction="0" cache="1">
+			<![CDATA[身份识别未通过，请再次将脸部对准图像采集框，保持周围环境光线充足，避免镜头逆光。]]>
+		</Text>
+		<Text textID="6" belongto="avp" textAction="0" cache="0">
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，由于身份识别未通过，您申请办理的大额转账远程见证业务将终止，请使用其他大额转账认证方式。]]>
+		</Text>
+		<Text textID="7" belongto="avp" textAction="0" cache="1">
+			<![CDATA[由于私密问题答案不符，系统重新推送私密问题，请注意查看手机]]>
+		</Text>
+		<Text textID="8" belongto="avp" textAction="0" cache="0">
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，由于私密问题核验未通过，将转接人工座席处理，请稍候。]]>
+		</Text>
+  </ReplyAnswer>
+  <CustomerTerminal speechID="8" name="用户操作提示" belongto="avp">
+		<!--客户主动挂断-->
+		<Text textID="1" belongto="avp" textAction="0" cache="0" operation="RingOff">
+			<![CDATA[尊敬的]]>
+			<CustName type="A" readme="客户姓名" belongto="acc">CustName</CustName>
+			<Sex type="A" readme="客户性别" belongto="acc">Sex</Sex>
+			<![CDATA[，您的大额转账远程认证任务已取消，若需继续办理转账业务，请使用其他大额转账认证方式。]]>
+		</Text>
+  </CustomerTerminal>
+  <TellerTerminal speechID="9" name="柜员操作提示" belongto="avp">
+		<!--点击提示按钮-->
+		<Text textID="1" belongto="avp" textAction="0" cache="1" >
+			<![CDATA[为保证本次业务办理的真实性及合规性，请确保由您本人全程办理，并保持正面朝向手机摄像头。]]>
+		</Text>
+		 <!--点击终止流程按钮-->
+		<Text textID="2" belongto="avp" textAction="0" cache="1" >
+			<![CDATA[由于您业务办理过程中不符合业务合规要求，您申请办理的大额转账远程见证业务将终止，请使用其他大额转账认证方式。]]>
+		</Text>
+  </TellerTerminal>
+</root>
