@@ -5,4 +5,8 @@
     <string name="text">asyncTask</string>
     <string name="sure">execute</string>
     <string name="cancel">cancel</string>
+    <string name="text1">IntentService Activity</string>
+    <string name="start">startService</string>
+    <string name="load">加载图片</string>
+    <string name="btn">send broadcast</string>
 </resources>

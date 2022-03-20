@@ -12,10 +12,7 @@ import android.widget.TextView;
 import com.blankj.utilcode.util.LogUtils;
 
 import a.lixin.encryption.R;
-/** 
- * @author lixin
- * @version 1.0
- */
+
 public class AsyncTaskActivity extends AppCompatActivity {
     private static final String TAG = "ThreadActivity";
     private ProgressBar mProgressBar;
