@@ -1,18 +1,12 @@
 package a.lixin.pd;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.Manifest;
-import android.content.Context;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Environment;
-import android.os.Handler;
-import android.os.Message;
-import android.view.View;
 import android.widget.Button;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 import com.blankj.utilcode.util.LogUtils;
 import java.io.File;
@@ -29,40 +23,12 @@ public class MainActivity extends AppCompatActivity {
     String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
     VideoView play_vv;
 
-    private static Context sContext;
-    static TextView mTextView;
-    MyHandler mHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //initView();
-        sContext = this;
-
-        mTextView = new TextView(sContext);
-        mHandler = new MyHandler();
-        mHandler.sendEmptyMessage(1);
-    }
-
-    public static class MyHandler extends Handler{
-        @Override
-        public void handleMessage(@NonNull Message msg) {
-            super.handleMessage(msg);
-            LogUtils.dTag(TAG,"msg=" + msg.what);
-            Context context;
-            MainActivity.mTextView.setText("msg.obj");
-        }
-    }
-    private void initView() {
         Button button = findViewById(R.id.button);
-        play_vv = findViewById(R.id.vv_play);
-        playMp4(button);
-    }
-    /**
-     * 播放mp4
-     * @param button
-     */
-    private void playMp4(Button button) {
+        initView();
         PermissionUtils.checkAndRequestMorePermissions(
                 this,
                 permissions,
@@ -74,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 }));
     }
 
-
+    private void initView() {
+        play_vv = findViewById(R.id.vv_play);
+    }
 
 
     private void startPlayVideo(String path){

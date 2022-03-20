@@ -47,7 +47,8 @@ public class RxJavaActivity extends AppCompatActivity {
 
 
     public void callRxJava(int i){
-                        Observable.create((ObservableOnSubscribe<String>) emitter -> {
+                        Observable
+                                .create((ObservableOnSubscribe<String>) emitter -> {
                             LogUtils.dTag(TAG,"threadName=" + Thread.currentThread().getName() +" is " + i);
                             emitter.onNext("test");
                         })
@@ -76,4 +77,5 @@ public class RxJavaActivity extends AppCompatActivity {
                             }
                         });
     }
+
 }

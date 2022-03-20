@@ -4,7 +4,7 @@ plugins {
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.0"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "a.lixin.pd"
@@ -50,10 +50,6 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
     //RxAndroid的依赖包
     implementation 'io.reactivex.rxjava3:rxjava:3.0.10'
-    //检测内存泄露
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
 
-    implementation 'org.greenrobot:eventbus:3.1.1'
-    api 'com.fasterxml.jackson.core:jackson-databind:2.9.8'
 
 }

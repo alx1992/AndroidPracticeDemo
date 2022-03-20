@@ -17,7 +17,7 @@ import io.reactivex.rxjava3.core.Observer;
 import io.reactivex.rxjava3.disposables.Disposable;
 
 public class TimerActivity extends AppCompatActivity {
-    private static final String TAG = "TimerActivity";
+    private static final String TAG = "Cannot invoke method length() on null object";
     private Disposable mDisposable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
